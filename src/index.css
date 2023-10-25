@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: poppins;
+  box-sizing: border-box;
+}
+
+#root {
+  position: relative;
+}
