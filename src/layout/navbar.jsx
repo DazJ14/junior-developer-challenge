@@ -11,7 +11,7 @@ const Navbar = () => {
 
   return (
     <header className="header w-full sticky z-30 top-0 left-0 bg-[#FD9255]">
-      <div className="max-w-[1240px] mx-auto px-8 py-8 items-center z-20 justify-between text-white md:flex md:flex-row md:px-10">
+      <div className="max-w-[1240px] mx-auto px-8 py-8 items-center z-30 justify-between bg-[#FD9255] text-white md:flex md:flex-row md:px-10">
         <a className="logo-anchor w-16 h-16">
           <svg
             width="64px"
@@ -36,14 +36,12 @@ const Navbar = () => {
         </a>
         <div
           onClick={handleNav}
-          className="absolute z-30 right-8 top-1/2 -translate-y-1/2 cursor-pointer md:hidden bg-white rounded p-1 text-black"
+          className="absolute z-40 right-8 top-1/2 -translate-y-1/2 cursor-pointer md:hidden bg-white rounded p-1 text-black"
         >
           {nav ? <AiOutlineClose size={32} /> : <AiOutlineMenu size={32} />}
         </div>
         <ul
-          className={`md:flex md:gap-16 md:items-center md:pb-0 pb-12 bg-[#FD9255] absolute md:static md:-z-30 -z-50 left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-300 ease-in-out md:opacity-100 ${
-            nav ? "top-32 opacity-100" : "top-[-300px] opacity-0"
-          }`}
+          className={`md:flex gap-16 items-center pb-0 static z-30 w-auto md:pl-0 hidden`}
         >
           <NavItem>How We Work</NavItem>
           <NavItem>Services</NavItem>
@@ -51,6 +49,16 @@ const Navbar = () => {
           <NavItem>Contact</NavItem>
         </ul>
       </div>
+      <ul
+        className={`pb-12 bg-[#FD9255] absolute -z-10 left-0 w-full pl-9 transition-all duration-300 ease-in-out ${
+          nav ? "top-32 opacity-100" : "top-[-300px] opacity-0"
+        }`}
+      >
+        <NavItem>How We Work</NavItem>
+        <NavItem>Services</NavItem>
+        <NavItem>Free Quote</NavItem>
+        <NavItem>Contact</NavItem>
+      </ul>
     </header>
   );
 };
